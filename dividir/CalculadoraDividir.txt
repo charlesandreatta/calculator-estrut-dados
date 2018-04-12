@@ -1,0 +1,47 @@
+package div;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CalculadoraDiv {
+	private Double value1;
+	private Double value2;
+	private Double result;
+	private List<String> results = new ArrayList<String>();
+
+	public Double getValor1() {
+		return value1;
+	}
+
+	public void setValue1(Double value1) {
+		this.value1 = value1;
+	}
+
+	public Double getValue2() {
+		return value2;
+	}
+
+	public void setValue2(Double value2) {
+		this.value2 = value2;
+	}
+
+	public Double getResult() {
+		return result;
+	}
+
+	public void setResult(Double result) {
+		this.result = result;
+	}
+
+	public List<String> getResults() {
+		return results;
+	}
+	public void setResults(List<String> results) {
+		this.results = results;
+	}
+	
+	public void div(){
+		result=value1/value2;
+		results.add("["+value1+"/"+value2+"="+result+"]");
+	}
+}

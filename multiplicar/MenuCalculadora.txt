@@ -1,0 +1,42 @@
+package multiply;
+
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+
+public class MenuCalculadora {
+	static Integer valueMenu =0;
+	static Scanner teclado = new Scanner(System.in);	
+	
+	public static void main(String[] args) {
+		CalculadoraMultiply calculadora = new CalculadoraMultiply();
+		
+		while (valueMenu != 3) {
+			if (valueMenu == 1) {
+				Float number1 = Float.parseFloat(JOptionPane.showInputDialog("Informe o value 1"));
+				Float number2 = Float.parseFloat(JOptionPane.showInputDialog("Informe o value 2"));
+				calculadora.setValue1(number1);
+				calculadora.setValue2(number2);
+				calculadora.multiply();
+				chamarMenu();
+			} else if (valueMenu == 2) {
+				System.err.println(calculadora.getResults());
+				chamarMenu();
+			} else if (valueMenu == 3) {
+				System.exit(0);
+			}else{
+				chamarMenu();
+			}
+		}
+	}
+
+	private static void chamarMenu() {		
+		System.err.println("#########################");
+		System.err.println("MENU");
+		System.err.println("1:MULTIPLY");
+		System.err.println("2:IMPRIMIR");
+		System.err.println("3:SAIR");
+		valueMenu = teclado.nextInt();
+	}
+}
